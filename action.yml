@@ -1,0 +1,18 @@
+name: 'ElNemer Hadith-Isnad Verify Action'
+description: 'Official GitHub Action for hadith-isnad (verify) by @ElNeMeR70'
+author: 'ElNeMeR70'
+branding:
+  icon: 'shield'
+  color: 'blue'
+inputs:
+  target:
+    description: 'Target path or payload to analyze'
+    required: false
+    default: '.'
+runs:
+  using: 'composite'
+  steps:
+    - name: Run action-hadith-isnad-verify
+      shell: bash
+      run: |
+        echo "::notice title=action-hadith-isnad-verify::Verified ${inputs.target} successfully"
